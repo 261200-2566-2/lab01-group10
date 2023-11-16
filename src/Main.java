@@ -43,7 +43,6 @@ public class Main {
                     N[i] = keep;
                     swap = true;
                 }
-
             }
         }
     }
