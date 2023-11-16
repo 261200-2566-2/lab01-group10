@@ -20,7 +20,7 @@ public class Main {
         int[] N = new int[num];
         // Press Shift+F10 or click the green arrow button in the gutter to run the code.
         for (int i = 0; i < num; i++) {
-            System.out.println("i = " + (i+1) + ": ");
+            System.out.println("Number " + (i+1) + ": ");
             N[i] = s.nextInt();
             // Press Shift+F9 to start debugging your code. We have set one breakpoint
             // for you, but you can always add more by pressing Ctrl+F8.
@@ -33,13 +33,17 @@ public class Main {
     }
     public static void sort(int[] N){
         int l = N.length;
-        boolean swap = false;
+        boolean swap = true;
         while (swap) {
-            for (int i = 0; i < l; i++) {
-                int keep = N[i+1];
-                N[i+1] = N[i];
-                N[i] = keep;
-                swap = true;
+            swap = false;
+            for (int i = 0; i < l-1; i++) {
+                if(N[i] > N[i + 1]){
+                    int keep = N[i+1];
+                    N[i+1] = N[i];
+                    N[i] = keep;
+                    swap = true;
+                }
+
             }
         }
     }
